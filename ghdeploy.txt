@@ -1,0 +1,3 @@
+ng build --prod --base-href https://sharankasandula.github.io/hostel-app-ng.git/
+
+ngh --dir dist/hostel-app-ng
