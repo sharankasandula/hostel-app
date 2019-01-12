@@ -6,9 +6,12 @@ export interface ICustomer {
     customerSince: any;
 }
 
-export interface IOrder {
-    customerId: number;
-    orderItems: IOrderItem[];
+export interface ICustDetails {
+    customerId:number
+    fname:string;
+    lname:string;
+    city: string;
+    occupation: string;
 }
 
 export interface IOrderItem {
