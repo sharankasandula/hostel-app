@@ -1,0 +1,13 @@
+<div *ngIf="customer" class="container">
+  <h2> {{ customer.name | capitalize }}'s Details</h2>
+  <div >
+    {{ customerDetails[0].fname }}
+  </div>
+
+</div>
+<div *ngIf="!customer" class="center">
+  <h3>No customer found</h3>
+</div>
+<br />
+
+<button routerLink="/customers"  class="btn btn-secondary" type="button">Go Back</button>

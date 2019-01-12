@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { map, catchError } from 'rxjs/operators';
 
-import { ICustomer, IOrder } from '../../app/shared/interfaces';
+import { ICustomer, ICustDetails } from '../../app/shared/interfaces';
 
 @Injectable()
 export class DataService {
@@ -31,12 +31,14 @@ export class DataService {
       )
   }
 
-  getOrders(id: number): Observable<IOrder[]> {
-    return this.http.get<IOrder[]>(this.baseUrl + 'orders.json')
+
+
+  getCustomerDetails(id: number): Observable<ICustDetails[]> {
+    return this.http.get<ICustDetails[]>(this.baseUrl + 'customerDetails.json')
       .pipe(
-        map(orders => {
-          let custOrders = orders.filter((order: IOrder) => order.customerId === id);
-          return custOrders;
+        map(custDetails => {
+          let currentCustDetails = custDetails.filter((cust: ICustDetails) => cust.customerId === id);
+          return currentCustDetails;
         }),
         catchError(this.handleError)
       );
