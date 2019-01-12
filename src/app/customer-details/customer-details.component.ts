@@ -21,7 +21,6 @@ export class CustomerDetailsComponent implements OnInit {
 
     this.dataService.getCustomerDetails(id).subscribe((customerDetails: ICustDetails[]) => {
       this.customerDetails = customerDetails;
-      console.log('customerDetails', customerDetails[0])
     });
     
     this.dataService.getCustomer(id).subscribe((customer: ICustomer) => {
