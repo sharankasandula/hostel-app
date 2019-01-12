@@ -1,33 +1,32 @@
 <app-filter-textboxcomponent (changed)="filter($event)" ></app-filter-textboxcomponent>
 
 <br />
-<br />
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <th (click)="sort('name')">Name</th>
-            <th (click)="sort('city')">City</th>
-            <th (click)="sort('orderTotal')">Order Total</th>
+
+<small> <p class="text-right text-muted">Total: {{ filteredCustomers.length }}</p></small>
+<div class="table-responsive table-borderless shadow-sm table-sm table-responsive">
+    <table class="table  table-borderless table-hover rounded shadow-lg">
+        <thead >
+            <tr class="thead-dark  shadow-sm">
+                <th>Image</th>
+                <th (click)="sort('name')">First Name</th>
+                <th (click)="sort('surname')">Last Name</th>
+                <th (click)="sort('age')">Age</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th (click)="sort('region')">Region</th>
+            </tr>
+        </thead>
+        <tr class="shadow-sm" *ngFor="let cust of filteredCustomers" [routerLink]="['/customer',cust.credit_card.pin]">
+            <td><img class="rounded-circle shadow-sm  img-thumbnail  " width="80" height="40" src="{{cust.photo}}" /></td>
+            <td class="align-middle">{{ cust.name | capitalize }}</td>
+            <td class="align-middle">{{ cust.surname | capitalize }}</td>
+            <td class="align-middle">{{ cust.age }}</td>
+            <td class="align-middle max-width-100">{{ cust.phone }}</td>
+            <td class="align-middle">{{ cust.email }}</td>
+            <td class="align-middle">{{ cust.region }}</td>
         </tr>
-    </thead>
-    <tr *ngFor="let cust of filteredCustomers">
-        <td>
-            <a [routerLink]="['/customer',cust.id]">
-                {{ cust.name | capitalize }}
-            </a>
-        </td>
-        <td>{{ cust.city }}</td>
-        <td>{{ cust.orderTotal | currency:currencyCode:'symbol' }}</td>
-    </tr>
-    <tr *ngIf="filteredCustomers && filteredCustomers.length">
-        <td colspan="2">&nbsp;</td>
-        <td>
-            {{ customersOrderTotal | currency:currencyCode:'symbol' }}
-        </td>
-    </tr>
-    <tr *ngIf="!filteredCustomers || !filteredCustomers.length">
-        <td colspan="4">No customers found</td>
-    </tr>
-</table>
-Number of Customers: {{ filteredCustomers.length }}
-<br />
+        <tr *ngIf="!filteredCustomers || !filteredCustomers.length">
+            <td colspan="4">No customers found</td>
+        </tr>
+    </table>
+</div>

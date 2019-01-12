@@ -1,13 +1,18 @@
+<button routerLink="/customers"  class="btn btn-secondary" type="button">Go Back</button>
 <div *ngIf="customer" class="container">
-  <h2> {{ customer.name | capitalize }}'s Details</h2>
+  <h2 class="font-weight-light"> {{ customer.name | capitalize }}'s Details</h2>
   <div >
-    {{ customerDetails[0].fname }}
+    <p>{{ customer.title | capitalize }} {{ customer.name | capitalize }} {{ customer.surname | capitalize }}</p>
+    
+    {{ customer.age }}
+    {{ customer.phone }}
+    {{ customer.email }}
+    {{ customer.password }}
   </div>
 
 </div>
 <div *ngIf="!customer" class="center">
-  <h3>No customer found</h3>
+  <br>
+  <h5>No customer found</h5>
 </div>
 <br />
-
-<button routerLink="/customers"  class="btn btn-secondary" type="button">Go Back</button>
