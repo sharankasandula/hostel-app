@@ -1,0 +1,58 @@
+[
+    {
+        "customerId": 1,
+        "fname":"John",
+        "lname":"Doe",
+        "city":"sangli",
+        "occupation":"studying"
+    },
+    {
+        "customerId": 2,
+        "fname":"John",
+        "lname":"Doe",
+        "city":"sangli",
+        "occupation":"studying"
+    },
+    {
+        "customerId": 3,
+        "fname":"John",
+        "lname":"Doe",
+        "city":"sangli",
+        "occupation":"studying"
+    },
+    {
+        "customerId": 5,
+        "fname":"John",
+        "lname":"Doe",
+        "city":"sangli",
+        "occupation":"studying"
+    },
+    {
+        "customerId": 6,
+        "fname":"John",
+        "lname":"Doe",
+        "city":"sangli",
+        "occupation":"studying"
+    },
+    {
+        "customerId": 7,
+        "fname":"John",
+        "lname":"Doe",
+        "city":"sangli",
+        "occupation":"studying"
+    },
+    {
+        "customerId": 9,
+        "fname":"John",
+        "lname":"Doe",
+        "city":"sangli",
+        "occupation":"studying"
+    },
+    {
+        "customerId": 10,
+        "fname":"John",
+        "lname":"Doe",
+        "city":"sangli",
+        "occupation":"studying"
+    }
+]
