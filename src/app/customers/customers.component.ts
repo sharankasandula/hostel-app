@@ -8,13 +8,11 @@ import { ICustomer } from '../shared/interfaces';
   templateUrl: './customers.component.html'
 })
 export class CustomersComponent implements OnInit {
-  title: string;
   people: any[];
 
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.title = 'Customers';
     this.dataService.getCustomers().subscribe((customers: ICustomer[]) => this.people = customers);
   }
 }
